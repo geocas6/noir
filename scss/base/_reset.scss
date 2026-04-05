@@ -1,0 +1,32 @@
+// =============================================================================
+// BASE — Reset
+// Estilos base y normalización del box model
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}

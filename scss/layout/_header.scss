@@ -1,0 +1,195 @@
+// =============================================================================
+// LAYOUT — Header y Navegación
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// --- Header fijo ---
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: v.$z-header;
+    background-color: v.$color-secondary;
+    border-bottom: v.$border-light;
+    backdrop-filter: blur(10px);
+}
+
+// --- Barra de navegación ---
+nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: v.$sp-md;
+    @include m.section-container;
+
+    @include m.respond-to('tablet') {
+        padding: v.$sp-lg v.$sp-xl;
+    }
+
+    @include m.respond-to('desktop') {
+        padding: 2.5rem 5%;
+    }
+}
+
+// --- Logo de la marca ---
+.logo {
+    font-size: v.$fs-xl;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: v.$color-primary;
+
+    img {
+        height: 55px;
+        width: auto;
+    }
+
+    @include m.respond-to('tablet') {
+        @include m.absolute-vcenter;
+        left: v.$sp-xl;
+    }
+
+    @include m.respond-to('desktop') {
+        left: 5%;
+    }
+}
+
+// --- Botón hamburguesa (móvil) ---
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: v.$sp-xs;
+    background: none;
+    border: none;
+    font-size: v.$fs-xl;
+
+    span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: v.$color-primary;
+        margin: 5px 0;
+        transition: v.$transition-fast;
+    }
+
+    @include m.respond-to('mobile') {
+        display: block;
+    }
+}
+
+// --- Links de navegación ---
+.nav-links {
+    // @extend %clean-list — equivalente inline (cross-module con @use no soporta @extend)
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: v.$sp-sm;
+    flex-direction: row;
+    margin: 0 auto;
+
+    li {
+        width: 100%;
+        border-bottom: v.$border-light;
+    }
+
+    a {
+        display: block;
+        padding: v.$sp-sm v.$sp-md;
+        color: v.$color-text;
+        font-size: v.$fs-base;
+        transition: background v.$transition-fast ease;
+
+        &:hover {
+            background: v.$color-accent;
+        }
+    }
+
+    // Estado activo (menú abierto en móvil)
+    &.active {
+        display: flex;
+    }
+
+    // --- Tablet y desktop ---
+    @include m.respond-to('tablet') {
+        display: flex !important;
+        flex-direction: row;
+        gap: v.$sp-xl;
+        background: none;
+        border-top: none;
+        box-shadow: none;
+        padding: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        li {
+            border-bottom: none;
+            width: auto;
+        }
+
+        a {
+            padding: 0;
+
+            &:hover {
+                background: none;
+                transform: scale(1.06);
+            }
+        }
+    }
+
+    @include m.respond-to('desktop') {
+        gap: v.$sp-xxl;
+    }
+
+    // --- Móvil: desplegable ---
+    @include m.respond-to('mobile') {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: v.$color-secondary;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        border-top: v.$border-light;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// --- Icono del carrito ---
+.cart-icon {
+    cursor: pointer;
+    font-size: v.$fs-lg;
+    @include m.absolute-vcenter;
+    right: v.$sp-md;
+    z-index: v.$z-cart;
+    @include m.flex-align-center;
+    gap: v.$sp-xs;
+
+    svg {
+        transition: transform v.$transition-fast ease;
+    }
+
+    &:hover svg {
+        transform: scale(1.15);
+    }
+
+    #cart-count {
+        font-size: v.$fs-xs;
+        font-weight: 700;
+    }
+
+    @include m.respond-to('tablet') {
+        right: v.$sp-xl;
+    }
+
+    @include m.respond-to('desktop') {
+        right: 5%;
+    }
+}

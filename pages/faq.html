@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!-- Preguntas Frecuentes — NOIR con componentes Bootstrap Accordion -->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes — NOIR | Envíos, Talles y Devoluciones</title>
+    <meta name="description" content="Encontrá respuestas a las preguntas más frecuentes sobre envíos, talles, devoluciones y métodos de pago en NOIR.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos NOIR compilados (SCSS) -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        /* Navbar Bootstrap idéntica a lookbook.html */
+        .navbar-noir {
+            background-color: #fff !important;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1rem 1.5rem;
+        }
+
+        .navbar-noir .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar-noir .nav-link {
+            color: #333 !important;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            padding: 0.25rem 1rem !important;
+            transition: opacity 0.2s ease;
+        }
+
+        .navbar-noir .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        .navbar-noir .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-noir .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Hero FAQ */
+        .faq-hero {
+            background: linear-gradient(135deg, #f5f5f5, #ffffff);
+            padding: 7rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .faq-hero h1 {
+            font-weight: 300;
+            letter-spacing: 3px;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .faq-hero p {
+            color: #666;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        /* Sección FAQ */
+        .faq-section {
+            padding: 5rem 0;
+        }
+
+        .faq-section h2 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Accordion Bootstrap customizado */
+        .accordion-noir .accordion-item {
+            border: 1px solid #f0f0f0;
+            border-radius: 0 !important;
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion-noir .accordion-button {
+            background-color: #fff;
+            color: #000;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            border-radius: 0 !important;
+            box-shadow: none;
+            font-size: 0.95rem;
+        }
+
+        .accordion-noir .accordion-button:not(.collapsed) {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .accordion-noir .accordion-button::after {
+            filter: none;
+        }
+
+        .accordion-noir .accordion-button:not(.collapsed)::after {
+            filter: invert(1);
+        }
+
+        .accordion-noir .accordion-body {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            background-color: #fafafa;
+        }
+
+        /* Badges de categoría */
+        .faq-badge {
+            background-color: #000;
+            color: #fff;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* CTA */
+        .faq-cta {
+            background: #000;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .faq-cta h2 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .btn-noir-white {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff;
+            border-radius: 0;
+            letter-spacing: 1px;
+            padding: 0.75rem 2rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-noir-white:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .cart-icon-nav {
+            cursor: pointer;
+        }
+
+        .cart-icon-nav #cart-count {
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR BOOTSTRAP con Menú Hamburguesa ===== -->
+    <nav class="navbar navbar-expand-md navbar-light navbar-noir fixed-top" aria-label="Navegación principal de NOIR">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="../index.html" aria-label="Ir al inicio de NOIR">
+                <img src="../img/logo.png" alt="Logo de NOIR — Moda contemporánea">
+            </a>
+
+            <!-- Botón hamburguesa -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarFaq"
+                    aria-controls="navbarFaq"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarFaq">
+                <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lookbook.html">Lookbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faq.html" aria-current="page">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Carrito -->
+                <div class="cart-icon-nav d-flex align-items-center gap-1" title="Mi carrito">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         aria-hidden="true">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" aria-label="Cantidad de productos en carrito"></span>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="faq-hero" aria-labelledby="faq-hero-title">
+        <h1 id="faq-hero-title">Preguntas Frecuentes</h1>
+        <p>Todo lo que necesitás saber sobre NOIR</p>
+    </section>
+
+    <main id="contenido-principal">
+
+        <!-- ===== ACCORDION BOOTSTRAP — FAQ ===== -->
+        <section class="faq-section" aria-labelledby="faq-envios-title">
+            <div class="container" style="max-width: 800px;">
+
+                <!-- Categoría: Envíos -->
+                <span class="faq-badge">ENVÍOS</span>
+                <h2 id="faq-envios-title">Envíos y Entregas</h2>
+
+                <div class="accordion accordion-noir mb-5" id="accordionEnvios">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-e1">
+                            <button class="accordion-button" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-e1"
+                                    aria-expanded="true"
+                                    aria-controls="collapse-e1">
+                                ¿Cuánto tarda en llegar mi pedido?
+                            </button>
+                        </h3>
+                        <div id="collapse-e1" class="accordion-collapse collapse show"
+                             aria-labelledby="heading-e1" data-bs-parent="#accordionEnvios">
+                            <div class="accordion-body">
+                                Los envíos dentro de CABA se realizan en <strong>2 a 3 días hábiles</strong>. Para el interior del país, el plazo es de <strong>5 a 7 días hábiles</strong> dependiendo del destino. Recibirás un email con el número de seguimiento una vez despachado tu pedido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-e2">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-e2"
+                                    aria-expanded="false"
+                                    aria-controls="collapse-e2">
+                                ¿Cuál es el costo de envío?
+                            </button>
+                        </h3>
+                        <div id="collapse-e2" class="accordion-collapse collapse"
+                             aria-labelledby="heading-e2" data-bs-parent="#accordionEnvios">
+                            <div class="accordion-body">
+                                El envío tiene un costo de <strong>$2.500</strong> para CABA y GBA. Para el interior varía según la zona. Los pedidos superiores a <strong>$150.000</strong> tienen envío gratuito a todo el país.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-e3">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-e3"
+                                    aria-expanded="false"
+                                    aria-controls="collapse-e3">
+                                ¿Puedo retirar en tienda?
+                            </button>
+                        </h3>
+                        <div id="collapse-e3" class="accordion-collapse collapse"
+                             aria-labelledby="heading-e3" data-bs-parent="#accordionEnvios">
+                            <div class="accordion-body">
+                                Sí, podés retirar tu pedido sin costo en nuestra tienda ubicada en <strong>Av. Urquiza 4567, Buenos Aires</strong>. Horario de retiro: Lunes a Viernes de 10:00 a 19:00 hs, Sábados de 11:00 a 18:00 hs.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Categoría: Talles -->
+                <span class="faq-badge">TALLES</span>
+                <h2 id="faq-talles-title">Guía de Talles</h2>
+
+                <div class="accordion accordion-noir mb-5" id="accordionTalles">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-t1">
+                            <button class="accordion-button" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-t1"
+                                    aria-expanded="true"
+                                    aria-controls="collapse-t1">
+                                ¿Cómo sé que talle elegir?
+                            </button>
+                        </h3>
+                        <div id="collapse-t1" class="accordion-collapse collapse show"
+                             aria-labelledby="heading-t1" data-bs-parent="#accordionTalles">
+                            <div class="accordion-body">
+                                Recomendamos tomar las medidas de <strong>pecho, cintura y cadera</strong> y compararlas con nuestra tabla de talles disponible en cada ficha de producto. Si estás entre dos talles, te sugerimos elegir el más grande.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-t2">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-t2"
+                                    aria-expanded="false"
+                                    aria-controls="collapse-t2">
+                                ¿Las prendas tienen corte oversize?
+                            </button>
+                        </h3>
+                        <div id="collapse-t2" class="accordion-collapse collapse"
+                             aria-labelledby="heading-t2" data-bs-parent="#accordionTalles">
+                            <div class="accordion-body">
+                                Nuestros buzos tienen un corte <strong>levemente oversize</strong>. Las remeras tienen corte <strong>recto estándar</strong>. Los jeans tienen corte regular. En cada descripción de producto te indicamos el fit exacto.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Categoría: Pagos y Devoluciones -->
+                <span class="faq-badge">PAGOS Y DEVOLUCIONES</span>
+                <h2 id="faq-pagos-title">Pagos y Devoluciones</h2>
+
+                <div class="accordion accordion-noir mb-5" id="accordionPagos">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-p1">
+                            <button class="accordion-button" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-p1"
+                                    aria-expanded="true"
+                                    aria-controls="collapse-p1">
+                                ¿Qué métodos de pago aceptan?
+                            </button>
+                        </h3>
+                        <div id="collapse-p1" class="accordion-collapse collapse show"
+                             aria-labelledby="heading-p1" data-bs-parent="#accordionPagos">
+                            <div class="accordion-body">
+                                Aceptamos <strong>tarjetas de crédito y débito</strong> (Visa, Mastercard, American Express), <strong>transferencia bancaria</strong> y <strong>MercadoPago</strong>. Todos los pagos están protegidos por cifrado SSL.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-p2">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-p2"
+                                    aria-expanded="false"
+                                    aria-controls="collapse-p2">
+                                ¿Puedo devolver un producto?
+                            </button>
+                        </h3>
+                        <div id="collapse-p2" class="accordion-collapse collapse"
+                             aria-labelledby="heading-p2" data-bs-parent="#accordionPagos">
+                            <div class="accordion-body">
+                                Sí. Tenés <strong>30 días</strong> desde la recepción para solicitar un cambio o devolución. La prenda debe estar en perfecto estado, sin uso y con sus etiquetas originales. Contactanos por email a <strong>contacto@noir.com</strong> para iniciar el proceso.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading-p3">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-p3"
+                                    aria-expanded="false"
+                                    aria-controls="collapse-p3">
+                                ¿En cuánto tiempo recibo el reembolso?
+                            </button>
+                        </h3>
+                        <div id="collapse-p3" class="accordion-collapse collapse"
+                             aria-labelledby="heading-p3" data-bs-parent="#accordionPagos">
+                            <div class="accordion-body">
+                                Una vez recibida la devolución y verificado el estado del producto, el reembolso se procesa en <strong>5 a 10 días hábiles</strong> a través del mismo método de pago utilizado.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== CTA — Contacto ===== -->
+        <section class="faq-cta" aria-labelledby="faq-cta-title">
+            <h2 id="faq-cta-title">¿No encontraste tu respuesta?</h2>
+            <p style="color: #ccc; margin-bottom: 2rem; font-weight: 300;">Nuestro equipo está disponible para ayudarte.</p>
+            <a href="contact.html" class="btn-noir-white">Contactarnos</a>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/noirrr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://twitter.com/noirr" target="_blank" rel="noopener noreferrer">X</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="lookbook.html">Lookbook</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NOIR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>

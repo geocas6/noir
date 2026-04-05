@@ -1,0 +1,86 @@
+// =============================================================================
+// PAGES — Product Detail
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.product-detail {
+    padding-top: v.$nav-height;
+    @include m.section-padding;
+}
+
+.product-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: v.$sp-lg;
+    flex-wrap: wrap;
+}
+
+.product-image-container {
+    flex: 1;
+    min-width: 300px;
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+    }
+}
+
+.product-info {
+    flex: 1;
+    min-width: 300px;
+
+    .product-name {
+        font-size: v.$fs-xl;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .product-price {
+        font-size: v.$fs-xl;
+        font-weight: 700;
+        margin: v.$sp-sm 0;
+        color: v.$color-primary;
+    }
+}
+
+.size-selection {
+    margin: v.$sp-lg 0;
+
+    h3 {
+        font-size: v.$fs-base;
+        font-weight: 500;
+        margin-bottom: v.$sp-sm;
+    }
+}
+
+.size-options {
+    display: flex;
+    gap: v.$sp-xs;
+    flex-wrap: wrap;
+    margin-top: v.$sp-sm;
+}
+
+// --- Botón de agregar al carrito en detalle ---
+#add-to-cart-btn {
+    width: 100%;
+    padding: v.$sp-sm;
+    background: v.$color-primary;
+    color: v.$color-secondary;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: v.$sp-lg;
+    font-family: v.$font-body;
+    font-size: v.$fs-base;
+    letter-spacing: 1px;
+    transition: v.$transition-base;
+
+    &:hover {
+        background: #333;
+    }
+}

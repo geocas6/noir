@@ -1,0 +1,77 @@
+// =============================================================================
+// PAGES — Contact
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.contact-section {
+    @include m.section-padding;
+    @include m.section-container;
+    padding-top: v.$nav-height;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$sp-xl;
+    margin-bottom: v.$sp-xl;
+
+    @include m.respond-to('mobile') {
+        grid-template-columns: 1fr;
+        gap: v.$sp-lg;
+    }
+}
+
+.contact-info {
+    padding: v.$sp-lg;
+    background-color: #f5f5f5;
+
+    h3 {
+        font-size: v.$fs-lg;
+        font-weight: 500;
+        margin-bottom: v.$sp-md;
+        letter-spacing: 0.5px;
+    }
+}
+
+.contact-form-box {
+    background-color: #fafafa;
+    padding: v.$sp-lg;
+
+    h3 {
+        font-size: v.$fs-lg;
+        font-weight: 500;
+        margin-bottom: v.$sp-md;
+        letter-spacing: 0.5px;
+    }
+}
+
+.contact-item {
+    margin-bottom: v.$sp-lg;
+
+    strong {
+        display: block;
+        margin-bottom: v.$sp-xs;
+        color: v.$color-primary;
+    }
+
+    p {
+        color: v.$color-text-muted;
+        line-height: 1.8;
+    }
+
+    a {
+        color: v.$color-primary;
+        transition: opacity v.$transition-fast ease;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,71 @@
+// =============================================================================
+// COMPONENTS — Newsletter
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.newsletter {
+    @include m.section-padding;
+    background-color: v.$color-primary;
+    color: v.$color-secondary;
+    text-align: center;
+
+    h2 {
+        @include m.clamp-text(1.5rem, 5vw, 2rem);
+        font-weight: 300;
+        margin-bottom: v.$sp-sm;
+        letter-spacing: 1px;
+    }
+
+    p {
+        margin-bottom: v.$sp-md;
+    }
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: v.$sp-xs;
+
+    input {
+        flex: 1;
+        padding: v.$sp-sm;
+        border: none;
+        background-color: v.$color-secondary;
+        color: v.$color-text;
+        min-height: 44px;
+        font-family: v.$font-body;
+
+        &:focus {
+            outline: 2px solid v.$color-accent-dark;
+        }
+    }
+
+    button {
+        padding: v.$sp-sm v.$sp-lg;
+        background-color: v.$color-secondary;
+        color: v.$color-primary;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: v.$transition-base;
+        min-height: 44px;
+        font-family: v.$font-body;
+
+        &:hover {
+            background-color: v.$color-accent;
+        }
+    }
+
+    @include m.respond-to('tablet') {
+        flex-direction: row;
+    }
+
+    @include m.respond-to('mobile') {
+        flex-direction: column;
+    }
+}

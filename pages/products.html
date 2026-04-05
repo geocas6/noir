@@ -5,122 +5,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Productos — NOIR | Remeras, Jeans, Buzos y Accesorios</title>
+    <meta name="description" content="Explorá toda la colección de NOIR: remeras blancas y negras, jeans clásicos y ripped, buzos y gorras. Diseño minimalista con calidad premium.">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
+
+    <!-- ===== HEADER ===== -->
     <header>
-        <nav>
-            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><img
-                        src="../img/logo.png" alt="NOIR Logo" style="height: 55px; width: auto;"></a></div>
-            <button class="hamburger" aria-label="Menú">
+        <nav aria-label="Navegación principal">
+            <div class="logo">
+                <a href="../index.html" aria-label="Ir al inicio de NOIR">
+                    <img src="../img/logo.png" alt="Logo de NOIR — Moda contemporánea">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="products.html">Productos</a></li>
+            <ul class="nav-links" role="list">
+                <li><a href="products.html" aria-current="page">Productos</a></li>
+                <li><a href="lookbook.html">Lookbook</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
-            <div class="cart-icon" title="Mi carrito">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
+            <div class="cart-icon" title="Mi carrito" role="button" aria-label="Ver carrito de compras">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
-                <span id="cart-count"></span>
+                <span id="cart-count" aria-label="Cantidad de artículos en el carrito"></span>
             </div>
         </nav>
     </header>
 
-    <!-- Featured products section -->
-    <section class="featured-products" style="padding-top: 140px; margin-top: 0;">
-        <h2 class="section-title">Todos Nuestros Productos</h2>
-        <div class="products-grid">
-            <a href="product-detail.html?name=Remera Blanca" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/remera blanca.png" alt="Remera Blanca">
-                    <h3 class="product-name">Remera Blanca</h3>
-                    <p class="product-price">$45.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Remera Negra" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/remera negra.png" alt="Remera Negra">
-                    <h3 class="product-name">Remera Negra</h3>
-                    <p class="product-price">$45.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Jean" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/jean.png" alt="Jean">
-                    <h3 class="product-name">Jean</h3>
-                    <p class="product-price">$129.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Jean Ripped" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/jean ripped.png" alt="Jean Ripped">
-                    <h3 class="product-name">Jean Ripped</h3>
-                    <p class="product-price">$149.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Buzo Blanco" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/buzo blanco.png" alt="Buzo Blanco">
-                    <h3 class="product-name">Buzo Blanco</h3>
-                    <p class="product-price">$70.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Buzo Negro" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/buzo negro.png" alt="Buzo Negro">
-                    <h3 class="product-name">Buzo Negro</h3>
-                    <p class="product-price">$70.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Gorra Negra" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/gorra negra.png" alt="Gorra Negra">
-                    <h3 class="product-name">Gorra Negra</h3>
-                    <p class="product-price">$35.000</p>
-                </div>
-            </a>
-            <a href="product-detail.html?name=Gorra Blanca" class="product-card-link">
-                <div class="product-card">
-                    <img class="product-image" src="../img/gorra blanca.png" alt="Gorra Blanca">
-                    <h3 class="product-name">Gorra Blanca</h3>
-                    <p class="product-price">$35.000</p>
-                </div>
-            </a>
-        </div>
-    </section>
-    <!-- Fin: Sección de productos -->
+    <main id="contenido-principal">
 
-    <!-- Inicio: Sección de Newsletter para suscripciones -->
-    <section class="newsletter">
-        <!-- Título de la sección newsletter -->
-        <h2>Suscríbete a Nuestro Newsletter</h2>
-        <!-- Descripción breve -->
-        <p style="margin-bottom: 1.5rem;">Recibe las últimas tendencias y ofertas exclusivas</p>
-        <!-- Formulario para capturar el email del usuario -->
-        <form class="newsletter-form">
-            <!-- Campo de entrada de email -->
-            <input type="email" placeholder="Tu correo electrónico" required>
-            <button type="submit">Suscribirse</button>
-        </form>
-    </section>
+        <!-- ===== PRODUCTOS ===== -->
+        <section class="featured-products" aria-labelledby="productos-title">
+            <h1 id="productos-title" class="section-title">Todos Nuestros Productos</h1>
+            <div class="products-grid">
 
-    <!-- Footer -->
+                <a href="product-detail.html?name=Remera Blanca" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/remera blanca.png"
+                             alt="Remera blanca NOIR — algodón premium, corte recto">
+                        <h2 class="product-name">Remera Blanca</h2>
+                        <p class="product-price">$45.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Remera Negra" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/remera negra.png"
+                             alt="Remera negra NOIR — básico esencial de guardarropa">
+                        <h2 class="product-name">Remera Negra</h2>
+                        <p class="product-price">$45.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Jean" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/jean.png"
+                             alt="Jean clásico NOIR — denim de alta calidad con corte regular">
+                        <h2 class="product-name">Jean</h2>
+                        <p class="product-price">$129.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Jean Ripped" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/jean ripped.png"
+                             alt="Jean ripped NOIR — corte destruido con estilo urbano">
+                        <h2 class="product-name">Jean Ripped</h2>
+                        <p class="product-price">$149.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Buzo Blanco" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/buzo blanco.png"
+                             alt="Buzo blanco NOIR — sudadera oversize minimalista">
+                        <h2 class="product-name">Buzo Blanco</h2>
+                        <p class="product-price">$70.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Buzo Negro" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/buzo negro.png"
+                             alt="Buzo negro NOIR — abrigo de temporada con diseño limpio">
+                        <h2 class="product-name">Buzo Negro</h2>
+                        <p class="product-price">$70.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Gorra Negra" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/gorra negra.png"
+                             alt="Gorra negra NOIR — accesorio cápsula ajustable">
+                        <h2 class="product-name">Gorra Negra</h2>
+                        <p class="product-price">$35.000</p>
+                    </article>
+                </a>
+
+                <a href="product-detail.html?name=Gorra Blanca" class="product-card-link">
+                    <article class="product-card">
+                        <img class="product-image" src="../img/gorra blanca.png"
+                             alt="Gorra blanca NOIR — accesorio de temporada ajustable">
+                        <h2 class="product-name">Gorra Blanca</h2>
+                        <p class="product-price">$35.000</p>
+                    </article>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ===== NEWSLETTER ===== -->
+        <section class="newsletter" aria-labelledby="newsletter-products-title">
+            <article>
+                <h2 id="newsletter-products-title">Suscríbete a Nuestro Newsletter</h2>
+                <p>Recibe las últimas tendencias y ofertas exclusivas</p>
+                <form class="newsletter-form" id="newsletter-form-products" novalidate>
+                    <label for="newsletter-email-products" class="visually-hidden">Tu correo electrónico</label>
+                    <input type="email" id="newsletter-email-products" name="email"
+                           placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <ul>
-                    <li><a href="https://www.instagram.com/noirrr" target="_blank">Instagram</a></li>
-                    <li><a href="https://twitter.com/noirr" target="_blank">X</a></li>
+                    <li><a href="https://www.instagram.com/noirrr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://twitter.com/noirr" target="_blank" rel="noopener noreferrer">X</a></li>
                 </ul>
             </div>
         </div>
@@ -129,35 +157,37 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- ===== SCRIPTS ===== -->
     <script src="../js/cart.js"></script>
     <script>
-        // Newsletter functionality
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+        // Newsletter
+        document.getElementById('newsletter-form-products').addEventListener('submit', function (e) {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            // Simulate subscription
-            this.querySelector('button').textContent = 'Suscribiendo...';
-            this.querySelector('button').disabled = true;
+            const btn = this.querySelector('button');
+            btn.textContent = 'Suscribiendo...';
+            btn.disabled = true;
             setTimeout(() => {
-                // Show confirmation
                 const notification = document.createElement('div');
                 notification.className = 'noir-notification';
                 notification.textContent = '¡Te has suscrito exitosamente al newsletter!';
-                notification.style.cssText = 'position:fixed;top:140px;right:20px;background:#000;color:#fff;padding:0.9rem 1.2rem;border-radius:6px;z-index:4000;';
+                notification.style.cssText = 'position:fixed;top:140px;right:20px;background:#000;color:#fff;padding:0.9rem 1.2rem;border-radius:6px;z-index:4000;font-family:inherit;';
                 document.body.appendChild(notification);
                 setTimeout(() => notification.remove(), 5000);
-                // Reset form
                 this.reset();
-                this.querySelector('button').textContent = 'Suscribirse';
-                this.querySelector('button').disabled = false;
+                btn.textContent = 'Suscribirse';
+                btn.disabled = false;
             }, 1000);
         });
 
-        // Mobile menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Hamburger
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', function () {
+            const isOpen = navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
         });
     </script>
+
 </body>
+
 </html>

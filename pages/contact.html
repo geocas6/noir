@@ -5,236 +5,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        /* Contact page styles */
-        .contact-section {
-            padding: 5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-info {
-            padding: 2rem;
-            background-color: #f5f5f5;
-        }
-
-        .contact-info h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* Item individual de contacto */
-        .contact-item {
-            margin-bottom: 2rem;
-        }
-
-        /* Etiqueta fuerte en items de contacto */
-        .contact-item strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #000;
-        }
-
-        /* Párrafo dentro de item de contacto */
-        .contact-item p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 0;
-            font-family: inherit;
-            font-size: 0.95rem;
-            background-color: #fff;
-            color: #333;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #000;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            padding: 1rem 2rem;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            align-self: flex-start;
-        }
-
-        .submit-btn:hover {
-            background-color: #333;
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-section {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <title>Contacto — NOIR | Email, Teléfono y Ubicación en Buenos Aires</title>
+    <meta name="description" content="Contactá a NOIR por email, teléfono o formulario. Ubicados en Av. Urquiza 4567, Buenos Aires. Atención de lunes a sábado.">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
+
+    <!-- ===== HEADER ===== -->
     <header>
-        <nav>
-            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><img
-                        src="../img/logo.png" alt="NOIR Logo" style="height: 55px; width: auto;"></a></div>
-            <button class="hamburger" aria-label="Menú">
+        <nav aria-label="Navegación principal">
+            <div class="logo">
+                <a href="../index.html" aria-label="Ir al inicio de NOIR">
+                    <img src="../img/logo.png" alt="Logo de NOIR — Moda contemporánea">
+                </a>
+            </div>
+            <button class="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" role="list">
                 <li><a href="products.html">Productos</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="lookbook.html">Lookbook</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" aria-current="page">Contacto</a></li>
             </ul>
-            <div class="cart-icon" title="Mi carrito">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
+            <div class="cart-icon" title="Mi carrito" role="button" aria-label="Ver carrito de compras">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
-                <span id="cart-count"></span>
+                <span id="cart-count" aria-label="Cantidad de artículos en el carrito"></span>
             </div>
         </nav>
     </header>
-    <!-- Hero section -->
-    <section class="hero" style="padding-top: 140px; margin-top: 0;">
-        <div class="hero-content">
-            <h1>Contacto</h1>
-            <p>Estamos aquí para ayudarte.</p>
-        </div>
-    </section>
 
-    <!-- Contact section -->
-    <section class="contact-section">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
+    <main id="contenido-principal">
 
-                <div class="contact-item">
-                    <strong>Email</strong>
-                    <p>contacto@noir.com</p>
-                </div>
-
-                <div class="contact-item">
-                    <strong>Teléfono</strong>
-                    <p>+54 11 1356-9651</p>
-                </div>
-
-                <div class="contact-item">
-                    <strong>Ubicación</strong>
-                    <p>Avenida Urquiza, 4567<br>Buenos Aires, Argentina</p>
-                </div>
-
-                <div class="contact-item">
-                    <strong>Horario</strong>
-                    <p>Lunes - Viernes: 10:00 - 19:00<br>Sábado: 11:00 - 18:00<br>Domingo: Cerrado</p>
-                </div>
-
-                <div class="contact-item">
-                    <strong>Redes Sociales</strong>
-                    <p><a href="https://www.instagram.com/noirrr" target="_blank"
-                            style="color: #000; text-decoration: none; display: inline-block; margin-right: 1rem;">Instagram</a>
-                        <a href="https://twitter.com/noirr" target="_blank"
-                            style="color: #000; text-decoration: none; display: inline-block; margin-right: 1rem;">X</a>
-                        
-                    </p>
-                </div>
+        <!-- ===== HERO ===== -->
+        <section class="hero" aria-labelledby="contact-hero-title">
+            <div class="hero-content">
+                <h1 id="contact-hero-title">Contacto</h1>
+                <p>Estamos aquí para ayudarte.</p>
             </div>
-            <form class="contact-form" style="background-color: #fafafa; padding: 2rem;">
-                <h3 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 1.5rem; letter-spacing: 0.5px;">Envíanos un mensaje</h3>
+        </section>
 
-                <div class="form-group">
-                    <label for="name">Nombre *</label>
-                    <input type="text" id="name" name="name" required>
+        <!-- ===== CONTACT SECTION ===== -->
+        <section class="contact-section" aria-labelledby="contact-info-title">
+            <div class="contact-container">
+
+                <!-- Información de contacto -->
+                <aside class="contact-info" aria-label="Información de contacto de NOIR">
+                    <h2 id="contact-info-title">Información de Contacto</h2>
+
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <p><a href="mailto:contacto@noir.com">contacto@noir.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Teléfono</strong>
+                        <p><a href="tel:+5411135369651">+54 11 1356-9651</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Ubicación</strong>
+                        <address>Avenida Urquiza, 4567<br>Buenos Aires, Argentina</address>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Horario</strong>
+                        <p>Lunes - Viernes: 10:00 - 19:00<br>Sábado: 11:00 - 18:00<br>Domingo: Cerrado</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Redes Sociales</strong>
+                        <p>
+                            <a href="https://www.instagram.com/noirrr" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            &nbsp;&nbsp;
+                            <a href="https://twitter.com/noirr" target="_blank" rel="noopener noreferrer">X</a>
+                        </p>
+                    </div>
+                </aside>
+
+                <!-- Formulario de contacto -->
+                <div class="contact-form-box">
+                    <h2>Envíanos un mensaje</h2>
+                    <form class="contact-form" id="contact-form" novalidate
+                          aria-label="Formulario de contacto con NOIR">
+                        <div class="form-group">
+                            <label for="contact-name">Nombre *</label>
+                            <input type="text" id="contact-name" name="name"
+                                   autocomplete="name" required
+                                   placeholder="Tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="email"
+                                   autocomplete="email" required
+                                   placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Asunto *</label>
+                            <input type="text" id="contact-subject" name="subject"
+                                   required placeholder="¿En qué podemos ayudarte?">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Mensaje *</label>
+                            <textarea id="contact-message" name="message"
+                                      required placeholder="Escribí tu mensaje aquí..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="contact-submit-btn">Enviar Mensaje</button>
+                    </form>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="subject">Asunto *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
+        <!-- ===== NEWSLETTER ===== -->
+        <section class="newsletter" aria-labelledby="newsletter-contact-title">
+            <article>
+                <h2 id="newsletter-contact-title">Suscríbete a Nuestro Newsletter</h2>
+                <p>Recibe las últimas tendencias y ofertas exclusivas</p>
+                <form class="newsletter-form" id="newsletter-form-contact" novalidate>
+                    <label for="newsletter-email-contact" class="visually-hidden">Tu correo electrónico</label>
+                    <input type="email" id="newsletter-email-contact" name="email"
+                           placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </article>
+        </section>
 
-                <div class="form-group">
-                    <label for="message">Mensaje *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
+    </main>
 
-                <button type="submit" class="submit-btn">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Newsletter section -->
-    <section class="newsletter">
-        <h2>Suscríbete a Nuestro Newsletter</h2>
-        <p style="margin-bottom: 1.5rem;">Recibe las últimas tendencias y ofertas exclusivas</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Tu correo electrónico" required>
-            <button type="submit">Suscribirse</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <ul>
-                    <li><a href="https://www.instagram.com/noirrr" target="_blank">Instagram</a></li>
-                    <li><a href="https://twitter.com/noirr" target="_blank">X</a></li>
+                    <li><a href="https://www.instagram.com/noirrr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://twitter.com/noirr" target="_blank" rel="noopener noreferrer">X</a></li>
                 </ul>
             </div>
         </div>
@@ -243,35 +157,54 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- ===== SCRIPTS ===== -->
     <script src="../js/cart.js"></script>
     <script>
-        // Newsletter functionality
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+        // Contact form
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            // Simulate subscription
-            this.querySelector('button').textContent = 'Suscribiendo...';
-            this.querySelector('button').disabled = true;
+            const btn = document.getElementById('contact-submit-btn');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
             setTimeout(() => {
-                // Show confirmation
                 const notification = document.createElement('div');
-                notification.className = 'noir-notification';
-                notification.textContent = '¡Te has suscrito exitosamente al newsletter!';
-                notification.style.cssText = 'position:fixed;top:140px;right:20px;background:#000;color:#fff;padding:0.9rem 1.2rem;border-radius:6px;z-index:4000;';
+                notification.textContent = '¡Mensaje enviado! Te contactaremos pronto.';
+                notification.style.cssText = 'position:fixed;top:140px;right:20px;background:#000;color:#fff;padding:0.9rem 1.2rem;border-radius:6px;z-index:4000;font-family:inherit;';
                 document.body.appendChild(notification);
                 setTimeout(() => notification.remove(), 5000);
-                // Reset form
                 this.reset();
-                this.querySelector('button').textContent = 'Suscribirse';
-                this.querySelector('button').disabled = false;
+                btn.textContent = 'Enviar Mensaje';
+                btn.disabled = false;
             }, 1000);
         });
 
-        // Mobile menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Newsletter
+        document.getElementById('newsletter-form-contact').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.textContent = 'Suscribiendo...';
+            btn.disabled = true;
+            setTimeout(() => {
+                const notification = document.createElement('div');
+                notification.textContent = '¡Te has suscrito exitosamente al newsletter!';
+                notification.style.cssText = 'position:fixed;top:140px;right:20px;background:#000;color:#fff;padding:0.9rem 1.2rem;border-radius:6px;z-index:4000;font-family:inherit;';
+                document.body.appendChild(notification);
+                setTimeout(() => notification.remove(), 5000);
+                this.reset();
+                btn.textContent = 'Suscribirse';
+                btn.disabled = false;
+            }, 1000);
+        });
+
+        // Hamburger
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', function () {
+            const isOpen = navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
         });
     </script>
+
 </body>
+
 </html>

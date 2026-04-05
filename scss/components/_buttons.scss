@@ -1,0 +1,50 @@
+// =============================================================================
+// COMPONENTS — Botones
+// Todos los estilos de botones del proyecto NOIR
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// --- Botón principal CTA ---
+.cta-button {
+    @include m.button-primary;
+}
+
+// --- Botón outline (agregar al carrito) ---
+.add-to-cart {
+    @include m.button-outline;
+    padding: 0.8rem v.$sp-md;
+    font-size: v.$fs-sm;
+    letter-spacing: 0.5px;
+    width: 100%;
+    min-height: 44px;
+}
+
+// --- Botón de submit en formularios ---
+.submit-btn {
+    @include m.button-primary;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+// --- Botón de talle (product-detail) ---
+.size-btn {
+    padding: v.$sp-xs v.$sp-sm;
+    border: 1px solid v.$color-accent-dark;
+    background: v.$color-secondary;
+    cursor: pointer;
+    transition: v.$transition-base;
+    font-family: v.$font-body;
+    font-size: v.$fs-sm;
+
+    &:hover {
+        border-color: v.$color-primary;
+    }
+
+    &.selected {
+        background: v.$color-primary;
+        color: v.$color-secondary;
+        border-color: v.$color-primary;
+    }
+}

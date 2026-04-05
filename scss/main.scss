@@ -1,0 +1,30 @@
+// =============================================================================
+// MAIN — Punto de entrada SCSS de NOIR
+// Importa todos los parciales en el orden correcto (cascada)
+// =============================================================================
+
+// 1. Abstracts (variables y mixins — no generan CSS por sí solos)
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins'    as m;
+
+// 2. Base (reset y tipografía global)
+@use 'base/reset';
+@use 'base/typography';
+
+// 3. Layout (header, footer — estructuras globales)
+@use 'layout/header';
+@use 'layout/footer';
+
+// 4. Components (elementos reutilizables en toda la app)
+@use 'components/buttons';
+@use 'components/hero';
+@use 'components/cards';
+@use 'components/newsletter';
+@use 'components/forms';
+
+// 5. Pages (estilos específicos de cada página)
+@use 'pages/products';
+@use 'pages/contact';
+@use 'pages/product-detail';
+@use 'pages/payment';
+@use 'pages/confirmation';

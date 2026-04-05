@@ -1,0 +1,72 @@
+// =============================================================================
+// LAYOUT — Footer
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+footer {
+    padding: v.$sp-lg v.$sp-md;
+    background-color: v.$color-footer-bg;
+    color: v.$color-footer-text;
+    border-top: v.$border-dark;
+
+    @include m.respond-to('tablet') {
+        padding: v.$sp-xl;
+    }
+
+    @include m.respond-to('desktop') {
+        padding: v.$sp-xl 5%;
+    }
+}
+
+.footer-content {
+    max-width: v.$max-width;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$sp-lg;
+    margin-bottom: v.$sp-lg;
+
+    @include m.respond-to('tablet') {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+.footer-section {
+    h3 {
+        color: v.$color-secondary;
+        margin-bottom: v.$sp-sm;
+        font-weight: 500;
+        font-size: v.$fs-md;
+        letter-spacing: 0.5px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        a {
+            color: v.$color-footer-text;
+            font-size: v.$fs-sm;
+            transition: color v.$transition-fast ease;
+
+            &:hover {
+                color: v.$color-secondary;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    border-top: v.$border-dark;
+    padding-top: v.$sp-sm;
+    text-align: center;
+    font-size: v.$fs-sm;
+}

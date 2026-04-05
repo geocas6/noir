@@ -1,0 +1,141 @@
+// =============================================================================
+// COMPONENTS — Cards (productos y colecciones)
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// --- Contenedor de sección: títulos de sección ---
+.section-title {
+    // @extend %section-title — equivalente inline
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: v.$sp-lg;
+    @include m.clamp-text(1.5rem, 5vw, 2.5rem);
+
+    @include m.respond-to('desktop') {
+        margin-bottom: v.$sp-xl;
+    }
+}
+
+// ─── Colecciones ─────────────────────────────────────────────────────────────
+
+.collections {
+    @include m.section-padding;
+    @include m.section-container;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: v.$sp-md;
+    margin-bottom: v.$sp-xl;
+
+    @include m.respond-to('desktop') {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: v.$sp-lg;
+        margin-bottom: v.$sp-xxl;
+    }
+}
+
+.collection-card {
+    // @extend %card-base — equivalente inline
+    position: relative;
+    overflow: hidden;
+    background-color: v.$color-accent;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.02);
+
+        .collection-card-overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.collection-card-overlay {
+    position: absolute;
+    inset: 0; // shorthand para top/right/bottom/left: 0
+    background-color: rgba(0, 0, 0, 0.3);
+    @include m.flex-center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.collection-name {
+    color: v.$color-secondary;
+    font-size: v.$fs-lg;
+    letter-spacing: 1px;
+}
+
+// ─── Productos ────────────────────────────────────────────────────────────────
+
+.featured-products {
+    @include m.section-padding;
+    @include m.section-container;
+    background-color: #fafafa;
+
+    @include m.respond-to('tablet') {
+        padding-top: v.$nav-height;
+    }
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: v.$sp-md;
+
+    @include m.respond-to('desktop') {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: v.$sp-lg;
+    }
+
+    @include m.respond-to('mobile') {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-card-link {
+    // @extend %link-reset — equivalente inline
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+    &:hover .product-card {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.product-card {
+    text-align: center;
+    transition: v.$transition-base;
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: v.$sp-sm;
+
+    @include m.respond-to('desktop') {
+        height: 300px;
+    }
+}
+
+.product-name {
+    font-size: v.$fs-base;
+    font-weight: 500;
+    margin-bottom: v.$sp-xs;
+    letter-spacing: 0.5px;
+}
+
+.product-price {
+    font-size: v.$fs-md;
+    color: v.$color-text-muted;
+    margin-bottom: v.$sp-sm;
+}

@@ -1,0 +1,28 @@
+// =============================================================================
+// BASE — Tipografía
+// Estilos globales de texto y fuente del proyecto NOIR
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+
+body {
+    font-family: v.$font-body;
+    color: v.$color-text;
+    background-color: v.$color-secondary;
+    line-height: v.$line-height;
+    font-size: v.$font-size-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+p {
+    margin-bottom: 0;
+}

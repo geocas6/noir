@@ -1,0 +1,61 @@
+// =============================================================================
+// ABSTRACTS — Variables
+// Tokens de diseño centralizados del proyecto NOIR
+// =============================================================================
+
+// --- Colores ---
+$color-primary:     #000000;
+$color-secondary:   #ffffff;
+$color-accent:      #f0f0f0;
+$color-accent-dark: #e0e0e0;
+$color-text:        #333333;
+$color-text-muted:  #666666;
+$color-footer-bg:   #1a1a1a;
+$color-footer-text: #999999;
+$color-footer-border: #333333;
+$color-success:     #4CAF50;
+
+// --- Tipografía ---
+$font-body:      'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-size-base: 16px;
+$line-height:    1.6;
+
+// Escala de tamaños de fuente
+$fs-xs:   0.85rem;
+$fs-sm:   0.9rem;
+$fs-md:   0.95rem;
+$fs-base: 1rem;
+$fs-lg:   1.2rem;
+$fs-xl:   1.5rem;
+
+// --- Espaciados ---
+$sp-xs:   0.5rem;
+$sp-sm:   1rem;
+$sp-md:   1.5rem;
+$sp-lg:   2rem;
+$sp-xl:   3rem;
+$sp-xxl:  5rem;
+
+// --- Bordes y radios ---
+$border-light:  1px solid $color-accent;
+$border-dark:   1px solid $color-footer-border;
+$border-radius-sm: 4px;
+
+// --- Transiciones ---
+$transition-base: all 0.3s ease;
+$transition-fast: 0.3s;
+
+// --- Z-index ---
+$z-header:    1000;
+$z-cart:      1001;
+$z-modal:     3000;
+$z-notif:     4000;
+
+// --- Layout ---
+$max-width:      1400px;
+$nav-height:     140px; // altura del header fija para padding-top del contenido
+
+// --- Breakpoints ---
+$bp-mobile:  767px;
+$bp-tablet:  768px;
+$bp-desktop: 1024px;

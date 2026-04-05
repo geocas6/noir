@@ -1,0 +1,56 @@
+// =============================================================================
+// COMPONENTS — Formularios (contacto y pago)
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.form-group {
+    margin-bottom: v.$sp-md;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-weight: 500;
+        margin-bottom: v.$sp-xs;
+        letter-spacing: 0.5px;
+        font-size: v.$fs-md;
+    }
+
+    input,
+    textarea {
+        padding: v.$sp-sm;
+        border: 1px solid v.$color-accent-dark;
+        border-radius: 0;
+        font-family: v.$font-body;
+        font-size: v.$fs-md;
+        background-color: v.$color-secondary;
+        color: v.$color-text;
+        transition: border-color v.$transition-fast ease;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+            border-color: v.$color-primary;
+        }
+    }
+
+    textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+}
+
+// --- Formulario de pago ---
+.payment-form-wrapper {
+    background: v.$color-secondary;
+    padding: v.$sp-lg;
+    border: v.$border-light;
+    border-radius: v.$border-radius-sm;
+
+    .form-group {
+        input {
+            border-radius: v.$border-radius-sm;
+        }
+    }
+}

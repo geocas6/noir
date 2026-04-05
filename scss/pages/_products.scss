@@ -1,0 +1,13 @@
+// =============================================================================
+// PAGES — Products (estilos específicos de la página)
+// Los estilos de grid y cards están en components/_cards.scss
+// =============================================================================
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// La página de productos reutiliza .featured-products de _cards.scss
+// Aquí solo sobreescribimos el padding para compensar el header fijo
+.featured-products {
+    padding-top: v.$nav-height;
+}

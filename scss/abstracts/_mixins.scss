@@ -1,0 +1,102 @@
+// =============================================================================
+// ABSTRACTS — Mixins
+// Mixins reutilizables del proyecto NOIR
+// =============================================================================
+
+@use 'variables' as v;
+
+// --- Flex centrado ---
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// --- Flex alineado verticalmente ---
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+// --- Media query wrapper ---
+@mixin respond-to($bp) {
+    @if $bp == 'mobile' {
+        @media (max-width: #{v.$bp-mobile}) { @content; }
+    } @else if $bp == 'tablet' {
+        @media (min-width: #{v.$bp-tablet}) { @content; }
+    } @else if $bp == 'desktop' {
+        @media (min-width: #{v.$bp-desktop}) { @content; }
+    }
+}
+
+// --- Padding de sección responsivo ---
+@mixin section-padding {
+    padding: v.$sp-xl v.$sp-md;
+
+    @include respond-to('tablet') {
+        padding: v.$sp-xl v.$sp-lg;
+    }
+
+    @include respond-to('desktop') {
+        padding: v.$sp-xxl 5%;
+    }
+}
+
+// --- Botón base (base compartida para todos los botones) ---
+@mixin button-base {
+    display: inline-block;
+    padding: v.$sp-sm v.$sp-lg;
+    border: 2px solid v.$color-primary;
+    cursor: pointer;
+    transition: v.$transition-base;
+    font-size: v.$fs-md;
+    letter-spacing: 1px;
+    min-height: 44px;
+    text-align: center;
+    font-family: v.$font-body;
+    text-decoration: none;
+}
+
+// --- Botón primario (negro sobre blanco) ---
+@mixin button-primary {
+    @include button-base;
+    background-color: v.$color-primary;
+    color: v.$color-secondary;
+
+    &:hover {
+        background-color: v.$color-secondary;
+        color: v.$color-primary;
+    }
+}
+
+// --- Botón outline (blanco sobre negro) ---
+@mixin button-outline {
+    @include button-base;
+    background-color: transparent;
+    color: v.$color-primary;
+    border: 1px solid v.$color-primary;
+
+    &:hover {
+        background-color: v.$color-primary;
+        color: v.$color-secondary;
+    }
+}
+
+// --- Contenedor de sección ---
+@mixin section-container {
+    max-width: v.$max-width;
+    margin: 0 auto;
+    width: 100%;
+}
+
+// --- Texto clamp responsivo ---
+@mixin clamp-text($min, $preferred, $max) {
+    font-size: clamp(#{$min}, #{$preferred}, #{$max});
+}
+
+// --- Posición absoluta centrada verticalmente ---
+@mixin absolute-vcenter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

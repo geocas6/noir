@@ -1,0 +1,67 @@
+// =============================================================================
+// ABSTRACTS — Placeholders
+// Selectores placeholder para @extend (dentro de este mismo archivo).
+//
+// NOTA: Con el sistema de módulos @use de SASS, los @extend de %placeholder
+// solo funcionan cuando el placeholder es generado en el mismo contexto de
+// compilación. Por eso los grupos de reglas que comparten estilos se expresan
+// aquí con @extend, mientras que los componentes cross-file usan mixins.
+// =============================================================================
+
+@use 'variables' as v;
+
+// ─── Demostración de @extend ──────────────────────────────────────────────────
+// Estas clases de utilidad SE EXTIENDEN entre sí dentro de este archivo.
+// El CSS resultante agrupa los selectores en una sola regla, evitando
+// duplicación — ese es el valor de @extend sobre los mixins.
+
+%clean-list-base {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// .nav-links y .footer-section ul comparten esta base:
+%clean-list {
+    @extend %clean-list-base;
+}
+
+%link-reset-base {
+    text-decoration: none;
+    color: inherit;
+}
+
+%link-reset {
+    @extend %link-reset-base;
+    display: block;
+}
+
+%section-title-base {
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+%section-title {
+    @extend %section-title-base;
+    margin-bottom: v.$sp-lg;
+}
+
+%card-base {
+    position: relative;
+    overflow: hidden;
+    background-color: v.$color-accent;
+    transition: transform 0.3s ease;
+}
+
+%form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%section-container {
+    max-width: v.$max-width;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
