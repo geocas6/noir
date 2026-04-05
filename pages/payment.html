@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Payment page -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><img src="../img/logo.png" alt="NOIR Logo" style="height: 55px; width: auto;"></a></div>
+            <button class="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="cart-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cart-count"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center; max-width: 600px; padding: 2rem;">
+            <h1 style="margin-bottom: 2rem; color: var(--primary-color);">Procesar Pago</h1>
+            <p style="margin-bottom: 2rem; color: var(--text-color);">Ingresa los detalles de tu método de pago para completar la compra.</p>
+            
+            <form id="payment-form" style="background: var(--secondary-color); padding: 2rem; border: 1px solid var(--accent-color); border-radius: 8px;">
+                <div style="margin-bottom: 1rem;">
+                    <label for="card-number" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">Número de Tarjeta</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" style="width: 100%; padding: 0.75rem; border: 1px solid var(--accent-color); border-radius: 4px;" required>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="expiry" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">Fecha de Expiración</label>
+                    <input type="text" id="expiry" placeholder="MM/AA" style="width: 100%; padding: 0.75rem; border: 1px solid var(--accent-color); border-radius: 4px;" required>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="cvv" style="display: block; margin-bottom: 0.5rem; color: var(--text-color);">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" style="width: 100%; padding: 0.75rem; border: 1px solid var(--accent-color); border-radius: 4px;" required>
+                </div>
+                <button type="submit" id="pay-btn" style="width: 100%; padding: 1rem; background: var(--primary-color); color: var(--secondary-color); border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Pagar Ahora</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/cart.js"></script>
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('pay-btn');
+            btn.disabled = true;
+            btn.textContent = 'Procesando...';
+            
+            // Simular procesamiento de pago
+            setTimeout(() => {
+                // Limpiar carrito después del pago
+                const cart = new ShoppingCart();
+                cart.clearCart();
+                // Redirigir a confirmación
+                window.location.href = 'confirmation.html';
+            }, 2000);
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
